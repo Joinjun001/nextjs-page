@@ -3,6 +3,7 @@ import { ObjectId } from "mongodb";
 import Comment from "./Comment";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import Like from "./Like";
 
 export default async function Detail(props) {
   let session = await getServerSession(authOptions);
@@ -25,7 +26,10 @@ export default async function Detail(props) {
       <hr></hr>
       <br></br>
       <h4>{result.content}</h4>
-
+      <div>
+        <Like write={result._id} user={session.user.email} like={result.like} />
+      </div>
+      <hr></hr>
       <Comment parent={result._id} />
     </div>
   );
