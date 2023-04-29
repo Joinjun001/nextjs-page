@@ -17,16 +17,20 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className="navbar">
-          <Link href="/list">AppleForum</Link>
-          <Link href="/write">Write</Link>
-          <Link href="/register">회원가입</Link>
-          {session ? (
-            <span>
-              {session.user.name} <LogoutBtn />
-            </span>
-          ) : (
-            <LoginBtn></LoginBtn>
-          )}
+          <Link href="/list" className="navbar-title">
+            이 문구를 본 이상 희망을 버려라
+          </Link>
+          <div className="navbar-down">
+            <Link href="/write">Write</Link>
+            <Link href="/register">회원가입</Link>
+            {session ? (
+              <span>
+                와서 감사합니다 뻐큐 {session.user.name} <LogoutBtn />
+              </span>
+            ) : (
+              <LoginBtn></LoginBtn>
+            )}
+          </div>
         </div>
         {children}
       </body>

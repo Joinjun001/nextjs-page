@@ -1,10 +1,25 @@
 body {
-  margin: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-down {
+  margin-top: 20px;
+  background-color: gray;
+  width: 100%;
+}
+
+.navbar-title {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .list-bg {
   background: rgb(249, 250, 255);
   padding: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .list-item {
@@ -45,7 +60,7 @@ button {
 
 .navbar {
   background: white;
-  padding: 20px;
+  width: 100%;
 }
 .navbar a {
   margin-right: 10px;

@@ -8,7 +8,8 @@ import bcrypt from "bcrypt";
 export const authOptions = {
   providers: [
     GithubProvider({
-      clientId: "3cf4ea676573a6692b7b", // github oath에서 client id 갖고와야됨
+      // github oath에서 client id 갖고와야됨 현재 oauth 주소 : https://nextjs-dc.vercel.app/
+      clientId: "3cf4ea676573a6692b7b",
       clientSecret: "dd60d9ebb406bd4d17fc543f5a432524db8206cb",
     }),
     CredentialsProvider({
