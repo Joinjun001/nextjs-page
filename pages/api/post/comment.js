@@ -17,7 +17,7 @@ export default async function handler(요청, 응답) {
     let result = await db.collection("comment").findOne({
       _id: insert.insertedId,
     });
-    console.log(result);
+
     return 응답.status(200).json(result);
   }
 }

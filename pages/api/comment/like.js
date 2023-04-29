@@ -15,11 +15,8 @@ export default async function handler(요청, 응답) {
           { _id: new ObjectId(data.write) },
           { $inc: { like: 1 }, $push: { like_id: data.user } }
         );
-      console.log(result);
       return 응답.status(200).json(find.like + 1); // 업데이트 안된 숫자이므로 +1 해서 보내줌
     } else {
-      console.log("개추 중복 금지요 ");
-      console.log(find.like);
       return 응답.status(200).json(find.like);
     }
   }

@@ -16,7 +16,6 @@ export default async function Detail(props) {
   let result = await db
     .collection("post")
     .findOne({ _id: new ObjectId(objectId) });
-  console.log(result);
   return (
     <div>
       <h2>페이커 갤러리</h2>
