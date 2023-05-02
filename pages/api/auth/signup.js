@@ -22,6 +22,6 @@ export default async function handler(요청, 응답) {
       return 응답.status(500).json("님 이메일 중복임");
     }
     await db.collection("user_cred").insertOne(요청.body);
-    응답.status(200).json("가입성공");
+    응답.status(302).redirect("/list");
   }
 }

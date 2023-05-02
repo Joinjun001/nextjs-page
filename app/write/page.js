@@ -6,7 +6,11 @@ export default async function Write() {
   console.log(session == null);
   console.log(session);
   if (session == null) {
-    return <div>로그인 하셈</div>;
+    return (
+      <div className="session-plz">
+        <div>글 작성은 로그인해야 가능함</div>
+      </div>
+    );
   } else {
     return (
       <div className="p-20">

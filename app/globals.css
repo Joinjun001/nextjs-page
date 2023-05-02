@@ -4,14 +4,23 @@ body {
 }
 
 .navbar-down {
+  display: flex;
+  align-items: center;
   margin-top: 20px;
-  background-color: gray;
+  background-color: rgb(61, 65, 77);
   width: 100%;
+  height: 60px;
+}
+
+.navbar-down * {
+  margin-left: 15px;
+  font-weight: 400;
+  color: white;
 }
 
 .navbar-title {
-  margin-top: 20px;
-  font-size: 30px;
+  margin-left: 20px;
+  font-size: 35px;
   font-weight: bolder;
 }
 
@@ -59,14 +68,11 @@ button {
 }
 
 .navbar {
+  margin-top: 40px;
   background: white;
   width: 100%;
 }
-.navbar a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: black;
-}
+
 .logo {
   font-weight: bold;
 }
@@ -80,4 +86,14 @@ a {
 .list-item {
   opacity: 1;
   transition: all 1s;
+}
+
+.session-plz {
+  margin: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mg-l-20 {
+  margin-left: 20px;
 }

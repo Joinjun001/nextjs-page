@@ -18,18 +18,22 @@ export default async function RootLayout({ children }) {
       <body>
         <div className="navbar">
           <Link href="/list" className="navbar-title">
-            이 문구를 본 이상 희망을 버려라
+            안녕하시긔
           </Link>
           <div className="navbar-down">
-            <Link href="/write">Write</Link>
-            <Link href="/register">회원가입</Link>
-            {session ? (
-              <span>
-                와서 감사합니다 뻐큐 {session.user.name} <LogoutBtn />
-              </span>
-            ) : (
-              <LoginBtn></LoginBtn>
-            )}
+            <div>
+              <Link href="/write">글싸기</Link>
+              <Link href="/register">회원가입</Link>
+            </div>
+            <div>
+              {session ? (
+                <span>
+                  와서 감사합니다 뻐큐 {session.user.name} <LogoutBtn />
+                </span>
+              ) : (
+                <LoginBtn></LoginBtn>
+              )}
+            </div>
           </div>
         </div>
         {children}
