@@ -7,13 +7,13 @@ export default async function Write() {
   console.log(session);
   if (session == null) {
     return (
-      <div className="session-plz">
+      <div className="session-plz gallery">
         <div>글 작성은 로그인해야 가능함</div>
       </div>
     );
   } else {
     return (
-      <div className="p-20">
+      <div className="p-20 gallery">
         <h4>글작성</h4>
         <form action="/api/post/new" method="POST">
           <input name="title" placeholder="글 제목" />

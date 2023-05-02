@@ -1,6 +1,6 @@
 export default function Register() {
   return (
-    <div>
+    <div className="p-20 gallery">
       <form method="POST" action="/api/auth/signup">
         <input name="id" type="text" placeholder="아이디"></input>
         <input name="email" type="text" placeholder="이메일"></input>

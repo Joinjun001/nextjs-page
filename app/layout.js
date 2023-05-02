@@ -22,6 +22,9 @@ export default async function RootLayout({ children }) {
           </Link>
           <div className="navbar-down">
             <div>
+              <Link href="/list" style={{ marginLeft: 310 }}>
+                페이커 갤러리
+              </Link>
               <Link href="/write">글싸기</Link>
               <Link href="/register">회원가입</Link>
             </div>

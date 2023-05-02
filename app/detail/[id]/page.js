@@ -17,7 +17,7 @@ export default async function Detail(props) {
     .collection("post")
     .findOne({ _id: new ObjectId(objectId) });
   return (
-    <div>
+    <div className="gallery">
       <h2>페이커 갤러리</h2>
       <hr></hr>
       <h3>{result.title}</h3>
