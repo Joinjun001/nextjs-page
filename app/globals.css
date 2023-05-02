@@ -115,3 +115,17 @@ a {
   margin-left: 325px;
   margin-right: 325px;
 }
+
+.write-title {
+  width: 1012px;
+}
+
+.write-content {
+  padding: 10px;
+  width: 990px;
+  height: 500px;
+  vertical-align: top;
+  font-size: 15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 30px;
+}

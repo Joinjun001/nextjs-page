@@ -18,7 +18,7 @@ export default async function RootLayout({ children }) {
       <body>
         <div className="navbar">
           <Link href="/list" className="navbar-title">
-            안녕하시긔
+            이 문구를 봤다면 희망을 버려라
           </Link>
           <div className="navbar-down">
             <div>
@@ -28,7 +28,7 @@ export default async function RootLayout({ children }) {
               <Link href="/write">글싸기</Link>
               <Link href="/register">회원가입</Link>
             </div>
-            <div>
+            <div style={{ marginLeft: 600 }}>
               {session ? (
                 <span>
                   와서 감사합니다 뻐큐 {session.user.name} <LogoutBtn />

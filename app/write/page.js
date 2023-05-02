@@ -14,10 +14,17 @@ export default async function Write() {
   } else {
     return (
       <div className="p-20 gallery">
-        <h4>글작성</h4>
+        <h4>글을 작성하시오 </h4>
         <form action="/api/post/new" method="POST">
-          <input name="title" placeholder="글 제목" />
-          <input name="content" placeholder="글 내용" />
+          <input name="title" placeholder="글 제목" className="write-title" />
+          <div>
+            <textarea
+              name="content"
+              placeholder="글 내용"
+              className="write-content"
+            ></textarea>
+          </div>
+
           <button type="submit">글 싸기</button>
         </form>
       </div>
