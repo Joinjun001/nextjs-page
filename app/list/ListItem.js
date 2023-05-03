@@ -9,7 +9,12 @@ export default function ListItem({ result }) {
         return (
           <div className="list-item" key={i}>
             <Link href={`/detail/${result[i]._id}`}>
-              <h4>{result[i].title}</h4>
+              <div className="result-parent">
+                <div className="result-title">📄 {result[i].title}</div>
+                <div className="result-nickname">{result[i].nickname}</div>
+                <div className="result-date">{result[i].date}</div>
+                <div className="result-like">{result[i].like}</div>
+              </div>
             </Link>
           </div>
         );

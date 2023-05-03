@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import styles from "./page.module.css";
 
 export default function Comment({ parent }) {
   let [comment, setComment] = useState("");
@@ -14,12 +15,12 @@ export default function Comment({ parent }) {
   }, []);
   return (
     <div>
-      <div>댓글 쓰셈</div>
       <input
         value={comment}
         onChange={(e) => {
           setComment(e.target.value);
         }}
+        className={styles.input}
       ></input>
       <button
         onClick={() => {
@@ -45,7 +46,7 @@ export default function Comment({ parent }) {
               </p>
             );
           })
-        : "댓글 없음"}
+        : "첫 댓글의 영광을 누릴수 있음"}
     </div>
   );
 }

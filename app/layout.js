@@ -31,7 +31,7 @@ export default async function RootLayout({ children }) {
             <div style={{ marginLeft: 600 }}>
               {session ? (
                 <span>
-                  와서 감사합니다 뻐큐 {session.user.name} <LogoutBtn />
+                  와서 감사합니다 {session.user.id}님 <LogoutBtn />
                 </span>
               ) : (
                 <LoginBtn></LoginBtn>

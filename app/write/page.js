@@ -3,8 +3,7 @@ import { getServerSession } from "next-auth";
 
 export default async function Write() {
   let session = await getServerSession(authOptions);
-  console.log(session == null);
-  console.log(session);
+  console.log(session.user);
   if (session == null) {
     return (
       <div className="session-plz gallery">

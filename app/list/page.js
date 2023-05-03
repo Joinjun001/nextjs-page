@@ -1,5 +1,6 @@
 import { connectDB } from "@/util/database";
 import ListItem from "./ListItem";
+import ListView from "./ListView";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,8 @@ export default async function List() {
 
   return (
     <div className="list-bg">
+      <ListView />
+
       <ListItem result={result} />
     </div>
   );

@@ -4,6 +4,7 @@ import Comment from "./Comment";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import Like from "./Like";
+import styles from "./page.module.css";
 
 export default async function Detail(props) {
   let session = await getServerSession(authOptions);
@@ -18,17 +19,26 @@ export default async function Detail(props) {
     .findOne({ _id: new ObjectId(objectId) });
   return (
     <div className="gallery">
-      <h2>페이커 갤러리</h2>
-      <hr></hr>
+      <div className={styles.width}>
+        <h2>페이커 갤러리</h2>
+        <hr className="hr-bold"></hr>
+      </div>
+
       <h3>{result.title}</h3>
-      <h5>{result.author}</h5>
+      <div className={styles.block}>
+        <span className={styles.nickname}>{result.nickname}</span>
+        <span className={styles.bar}>|</span>
+        <span className={styles.nickname}>{result.date}</span>
+        <span className={styles.like}>개추 {result.like}</span>
+      </div>
+
       <hr></hr>
       <br></br>
       <h4>{result.content}</h4>
       <div>
         <Like write={result._id} user={session.user.email} like={result.like} />
       </div>
-      <hr></hr>
+      <hr className="hr-bold"></hr>
       <Comment parent={result._id} />
     </div>
   );
