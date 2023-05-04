@@ -41,9 +41,12 @@ export default function Comment({ parent }) {
       {cmts.length > 0
         ? cmts.map((obj, i) => {
             return (
-              <p key={i}>
-                {obj.content} | {obj.author}
-              </p>
+              <div key={i}>
+                <span className={styles.commentID}>{obj.id}</span>
+                <span className={styles.comment}>{obj.content}</span>
+                <span className={styles.date}>{obj.date}</span>
+                <hr></hr>
+              </div>
             );
           })
         : "첫 댓글의 영광을 누릴수 있음"}

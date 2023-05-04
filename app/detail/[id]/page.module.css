@@ -28,3 +28,32 @@
 .width {
   width: 1200px;
 }
+
+.likeButton {
+  margin-left: 500px;
+}
+
+.content {
+  margin-bottom: 300px;
+}
+
+.commentID {
+  font-size: 12px;
+  width: 200px;
+
+  min-width: 200px;
+  display: inline-block;
+}
+
+.comment {
+  width: 800px;
+  display: inline-block;
+}
+
+.date {
+  display: inline-block;
+  min-width: 200px;
+  font-size: 13px;
+  color: gray;
+  font-weight: 500;
+}

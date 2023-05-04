@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }
 
 .navbar-down {
@@ -170,4 +173,18 @@ a {
   width: 50px;
   font-size: 15px;
   font-weight: 500;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 20px;
+  border: 2px solid #f1f1f1;
 }

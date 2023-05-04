@@ -34,7 +34,7 @@ export default async function Detail(props) {
 
       <hr></hr>
       <br></br>
-      <h4>{result.content}</h4>
+      <h4 className={styles.content}>{result.content}</h4>
       <div>
         {session ? (
           <Like

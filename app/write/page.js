@@ -1,5 +1,6 @@
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
+import styles from "./page.module.css";
 
 export default async function Write() {
   let session = await getServerSession(authOptions);
@@ -11,16 +12,21 @@ export default async function Write() {
     <div className="p-20 gallery">
       <h4>글을 싸시오 </h4>
       <form action="/api/post/new" method="POST">
-        <input name="title" placeholder="post title" className="write-title" />
+        <input name="title" placeholder="글 제목" className="write-title" />
         <div>
           <textarea
             name="content"
-            placeholder="text content"
+            placeholder="글 내용"
             className="write-content"
           ></textarea>
         </div>
-
-        <button type="submit">Text</button>
+        <div className={styles.right}>
+          {" "}
+          <button className={styles.cancle}>글 취소</button>
+          <button className={styles.button} type="submit">
+            글 발사
+          </button>
+        </div>
       </form>
     </div>
   );

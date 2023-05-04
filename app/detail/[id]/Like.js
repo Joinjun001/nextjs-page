@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./page.module.css";
 
 export default function Like({ write, user, like }) {
   const [개추, set개추] = useState(like);
   return (
     <button
+      className={styles.likeButton}
       onClick={() => {
         fetch("/api/comment/like", {
           method: "POST",
