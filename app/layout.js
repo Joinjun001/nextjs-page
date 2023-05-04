@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import LogoutBtn from "./LogoutBtn";
 import LoginBtn from "./LoginBtn";
+import Image from "next/image";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +19,8 @@ export default async function RootLayout({ children }) {
       <body>
         <div className="navbar">
           <Link href="/list" className="navbar-title">
-            이 문구를 봤다면 희망을 버려라
+            <Image src="/pepe.jpg" alt="kermit" width={200} height={150} />
+            <span> 이상한 사이트</span>
           </Link>
           <div className="navbar-down">
             <div>
