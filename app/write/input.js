@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import styles from "./page.module.css";
 
 export default function Input() {
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function Input() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.writeTitle}>
       <input
         id="input"
         name="title"
