@@ -12,10 +12,7 @@ export default async function Home() {
           <List></List>
         </div>
       ) : (
-        <div className="gallery">
-          아직 개발초기라 로그인안하면 에러가 개많이 납니다. 회원가입눌러서
-          로그인부터 해주세요..
-        </div>
+        <div className="gallery">로그인하면 글을 작성할수 있습니다.</div>
       )}
     </div>
   );

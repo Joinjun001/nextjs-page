@@ -1,27 +1,53 @@
 import { connectDB } from "@/util/database";
 import bcrypt from "bcrypt";
 
-export default async function handler(요청, 응답) {
-  if (요청.method == "POST") {
+export default async function handler(request, response) {
+  if (request.method == "POST") {
+    // Connect to database
     let db = (await connectDB).db("forum");
+
+    // Check if email is valid
+    let emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(request.body.email)) {
+      return response.status(500).json("이메일 이상하게씀~");
+    }
+
+    // Check if password meets requirements
+    let passwordRegex = /^(?=.*\d)(?=.*[a-z]).{8,}$/;
+    if (!passwordRegex.test(request.body.password)) {
+      return response
+        .status(500)
+        .json(
+          "비번은 소문자,숫자를 포함한 8글자 이상이어야합니다 안그러면 님 아이디 털림."
+        );
+    }
+
+    // Check if ID meets requirements
+    let idRegex = /^[a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣]{2,8}$/;
+    if (!idRegex.test(request.body.id)) {
+      return response
+        .status(500)
+        .json("닉네임은 특수문자 안되고, 2~8글자 안에서 만들어주세요");
+    }
+
+    // Check if user already exists
     let isExisted = await db
       .collection("user_cred")
-      .findOne({ email: 요청.body.email });
-    let hash = await bcrypt.hash(요청.body.password, 10);
-    요청.body.password = hash;
-    요청.body.role = "normal";
-    console.log(요청.body.id);
-    if (
-      요청.body.id == "" ||
-      요청.body.email == "" ||
-      요청.body.password == ""
-    ) {
-      return 응답.status(500).json("아이디, 이메일, 비번에 빈문자 보내지마셈");
-    }
+      .findOne({ email: request.body.email });
     if (isExisted) {
-      return 응답.status(500).json("님 이메일 중복임");
+      return response.status(500).json("이메일 중복이래요");
     }
-    await db.collection("user_cred").insertOne(요청.body);
-    응답.status(302).redirect("/list");
+
+    // Hash password and add user to database
+    let hash = await bcrypt.hash(request.body.password, 10);
+    request.body.password = hash;
+    request.body.role = "normal";
+    if (request.body.id.length > 20) {
+      request.body.id = request.body.id.substring(0, 20);
+    }
+    await db.collection("user_cred").insertOne(request.body);
+
+    // Redirect to list page
+    return response.status(400).redirect("/ok");
   }
 }

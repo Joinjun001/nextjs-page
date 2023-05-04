@@ -36,7 +36,15 @@ export default async function Detail(props) {
       <br></br>
       <h4>{result.content}</h4>
       <div>
-        <Like write={result._id} user={session.user.email} like={result.like} />
+        {session ? (
+          <Like
+            write={result._id}
+            user={session.user.email}
+            like={result.like}
+          />
+        ) : (
+          <div>로그인 해야 개추 가능</div>
+        )}
       </div>
       <hr className="hr-bold"></hr>
       <Comment parent={result._id} />
